@@ -26,9 +26,9 @@ export default class Content extends PureComponent {
               <span className="card-title">{this.props.data.title}</span>
               <p>{this.props.data.post}</p>
             </div>
-            <div className="card-action">
-              <a onClick={() => this.edit(this.props.data.id)}>Edit</a>
-              <a onClick={() => this.delete(this.props.data.id)}>Delete</a>
+            <div className="card-action" style={{cursor: "pointer"}}>
+              <a className={''} onClick={() => this.edit(this.props.data.id)}>Edit</a>
+              <a className={''} onClick={() => this.delete(this.props.data.id)}>Delete</a>
             </div>
           </div>
         </div>

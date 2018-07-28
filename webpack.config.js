@@ -17,14 +17,6 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
-      template: 'src/index.ejs',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      },
-      inject: true
-    }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'node_modules/materialize-css/dist/css'),
@@ -32,6 +24,10 @@ const config = {
       },
       {
         from: path.resolve(__dirname, 'node_modules/materialize-css/dist/js'),
+        to: path.resolve(__dirname, 'public/js')
+      },
+      {
+        from: path.resolve(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
         to: path.resolve(__dirname, 'public/js')
       }
     ])

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import Header from './util/header';
 import Home from './blog/home';
 import About from './util/about';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import EditPost from './admin/editPost';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class App extends React.Component {
 
@@ -11,8 +12,11 @@ class App extends React.Component {
     return (
         <div>
           <Header />
-          <Route exact path={'/'} component={Home}/>
-          <Route path={'/about'} component={About}/>
+          <Switch>
+            <Route exact path={'/'} component={Home}/>
+            <Route path={'/about'} component={About}/>
+            <Route path={'/edit'} component={EditPost}/>
+          </Switch>
         </div>
     );
   }
