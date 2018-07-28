@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './util/header';
-import MOCK_DATA from '../mock/data.json';
-import Content from './blog/content';
+import Home from './blog/home';
+import About from './util/about';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
 
-
   render() {
     return (
-      <div>
-        <Header />
-        {MOCK_DATA.data.map((data, i) =>
-            <Content data={data} key={i} />
-        )}
-      </div>
+        <div>
+          <Header />
+          <Route exact path={'/'} component={Home}/>
+          <Route path={'/about'} component={About}/>
+        </div>
     );
   }
 }
 
 ReactDOM.render(
-  <App />,
+  <Router>
+  <App /></Router>,
   document.getElementById('root')
 );

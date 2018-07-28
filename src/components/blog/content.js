@@ -19,14 +19,14 @@ export default class Content extends PureComponent {
 
   render() {
     return (
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">{this.props.data.title}</span>
+      <div className="row">
+        <div className="col s12">
+          <div className="card blue-grey darken-1">
+            <div className="card-content white-text">
+              <span className="card-title">{this.props.data.title}</span>
               <p>{this.props.data.post}</p>
             </div>
-            <div class="card-action">
+            <div className="card-action">
               <a onClick={() => this.edit(this.props.data.id)}>Edit</a>
               <a onClick={() => this.delete(this.props.data.id)}>Delete</a>
             </div>
@@ -36,5 +36,3 @@ export default class Content extends PureComponent {
     );
   }
 }
-
-exports.module
