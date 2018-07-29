@@ -19,11 +19,15 @@ const config = {
     new webpack.NoEmitOnErrorsPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'node_modules/materialize-css/dist/css'),
+        from: path.resolve(__dirname, 'node_modules/foundation-sites/dist/css'),
         to: path.resolve(__dirname, 'public/css')
       },
       {
-        from: path.resolve(__dirname, 'node_modules/materialize-css/dist/js'),
+        from: path.resolve(__dirname, 'node_modules/foundation-sites/dist/js'),
+        to: path.resolve(__dirname, 'public/js')
+      },
+      {
+        from: path.resolve(__dirname, 'node_modules/what-input/dist'),
         to: path.resolve(__dirname, 'public/js')
       },
       {
